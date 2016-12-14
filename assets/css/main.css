@@ -2387,7 +2387,7 @@ ol li {
 }
 
 ul {
-  list-style: disc;
+  list-style: none;
   margin: 0 0 2em 0;
   padding-left: 1em;
 }
@@ -2777,93 +2777,84 @@ body.is-touch .wrapper.style3 {
 /* Header */
 
 .header {
-  background-color: transparent;
-  border: 0;
-  box-shadow: none;
-  color: #484848;
-  cursor: default;
-  font-size: 1.25em;
-  height: 3.25em;
-  left: 0;
-  line-height: 3.25em;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 10000;
-  z-index: 10001;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    padding: 1.5rem 0;
+    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif
 }
 
-.header h1 {
-  color: #484848;
-  font-weight: 400;
-  height: inherit;
-  left: 1.25em;
-  line-height: inherit;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  top: 0;
+.header-content {
+    position: relative
 }
 
-.header nav {
-  height: inherit;
-  line-height: inherit;
-  position: absolute;
-  right: 2em;
-  top: 2em;
-  vertical-align: middle;
+.header-title-wrapper {
+    text-align: center
 }
 
-.header nav a {
-  color: #19506d;
+.header-nav-wrapper {
+    text-align: center
 }
 
-.header nav a:active, .header.alt nav a:hover {
-  color: #FFF;
+.header-title {
+    margin: 0;
+    line-height: 3.0rem;
+    font-size: 1.75rem
 }
 
-.header h1 {
-  color: #ffffff;
-  left: 2.5em;
-  top: 2em;
-}
-
-.header h1 a {
-  color: #19506d;
-}
-
-.header nav ul {
+.header-nav {
   list-style: none;
   margin: 0;
   padding-left: 0;
 }
 
-.header nav ul li {
-  border-radius: 4px;
+.header-nav li {
   display: inline-block;
   margin-left: 2.5em;
   padding-left: 0;
 }
 
-.header nav ul li a {
+.header-nav li a {
   -moz-transition: color 0.2s ease-in-out;
   -webkit-transition: color 0.2s ease-in-out;
   -ms-transition: color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out;
   color: #666;
-  display: inline-block;
   text-decoration: none;
+  font-size: 1.25rem;
 }
 
-.header nav ul li a:hover {
+.header-nav li a:hover {
   color: #484848;
 }
 
-.header nav ul li:first-child {
+.header-nav li:first-child {
   margin-left: 0;
 }
 
-/* Menu */
+@media (min-width:650px) {
+    .header {
+        padding: 2.5rem 0
+    }
+    .header-title-wrapper {
+        position: absolute;
+        left: 0
+    }
+    .header-nav-wrapper {
+      position: absolute;
+      right: 0;
+      -webkit-transform: translateY(25%);
+      -ms-transform: translateY(25%);
+      transform: translateY(25%)
+    }
+    .header-title {
+        font-size: 2rem
+    }
+    .header-nav li a {
+        font-size: 1.5rem
+    }
+}
 
 /* Banner */
 
@@ -2884,7 +2875,7 @@ body.is-touch #banner {
 
 .banner-text {
   text-align: center;
-
+  margin-top: 4em;
 }
 
 #banner:last-child {
