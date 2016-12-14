@@ -1657,11 +1657,6 @@ a:hover {
   text-decoration: none;
 }
 
-strong, b {
-  color: #484848;
-  font-weight: 700;
-}
-
 em, i {
   font-style: italic;
 }
@@ -2896,18 +2891,12 @@ body.is-touch #banner {
   margin-bottom: 0;
 }
 
-#banner h2 {
-  color: #ffffff;
+#banner h3 {
+  color: #d4f8fc;
   display: inline-block;
-  font-size: 3.5em;
+  font-size: 1.35em;
   line-height: 1.35;
   margin-bottom: 0.5em;
-}
-
-#banner p {
-  color: #aaa;
-  font-size: 1.5em;
-  margin-bottom: 1.75em;
 }
 
 @media screen and (max-width: 1280px) {
