@@ -1650,7 +1650,8 @@ body, input, select, textarea {
 
 a {
   text-decoration: underline;
-  color: #f32853;
+  color: inherit;
+  font-weight: bold;
 }
 
 a:hover {
@@ -2594,6 +2595,7 @@ header.major h2, header.major h3, header.major h4, header.major h5, header.major
 header.major p {
   font-size: 1.7em;
   margin-bottom: 0;
+  text-transform: lowercase;
 }
 
 @media screen and (max-width: 1280px) {
