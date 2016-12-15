@@ -2952,6 +2952,10 @@ body.is-touch .banner {
 
 }
 
+.intro p {
+  text-transform: lowercase;
+}
+
 /* About Me */
 
 .about {
@@ -3051,7 +3055,7 @@ body.is-touch .banner {
 }
 
 .footer a:active, .footer a:hover {
-  color: #666;
+  color: #e89625;
 }
 
 .footer .icons {
