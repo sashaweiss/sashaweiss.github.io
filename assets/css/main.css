@@ -2870,11 +2870,11 @@ body.is-touch .wrapper.style3 {
 
 /* Banner */
 
-body.is-touch #banner {
+body.is-touch .banner {
   background-attachment: scroll;
 }
 
-#banner {
+.banner {
   height: 100vh;
   padding: 16em 0 13em 0;
   background-attachment: fixed;
@@ -2890,11 +2890,11 @@ body.is-touch #banner {
   margin-top: 4em;
 }
 
-#banner:last-child {
+.banner:last-child {
   margin-bottom: 0;
 }
 
-#banner h3 {
+.banner h3 {
   color: #708fc1;
   display: inline-block;
   font-size: 1.35em;
@@ -2904,11 +2904,11 @@ body.is-touch #banner {
 
 @media screen and (max-width: 1280px) {
 
-  #banner {
+  .banner {
     padding: 14em 0 11em 0;
   }
 
-  #banner h2 {
+  .banner h2 {
     font-size: 2.5em;
   }
 
@@ -2916,7 +2916,7 @@ body.is-touch #banner {
 
 @media screen and (max-width: 980px) {
 
-  #banner {
+  .banner {
     padding: 9em 0 7em 0;
   }
 
@@ -2924,28 +2924,30 @@ body.is-touch #banner {
 
 @media screen and (max-width: 736px) {
 
-  #banner {
+  .banner {
     padding: 6em 2em 6em 2em;
   }
 
-  #banner br {
+  .banner br {
     display: none;
   }
 
-  #banner h2 {
+  .banner h2 {
     font-size: 2.25em;
   }
 
-  #banner p {
+  .banner p {
     font-size: 1.25em;
   }
 
 }
 
+/* mobile */
 @media screen and (max-width: 480px) {
 
-  #banner {
+  .banner {
     padding: 4em 2em 4em 2em;
+    background-attachment: scroll;
   }
 
 }
