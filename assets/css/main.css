@@ -2856,191 +2856,11 @@ body.is-touch .wrapper.style3 {
     }
 }
 
-/* Main */
-.main {
-  margin-top: 0;
-}
-
-@media (max-width:750px) {
-  .main {
-    padding: 2rem 0;
-    margin-top: 3em;
-  }
-}
-
-/* Banner */
-
-body.is-touch .banner {
-  background-attachment: scroll;
-}
-
-.banner {
-  height: 100vh;
-  padding: 16em 0 13em 0;
-  background-attachment: fixed;
-  background-image: url(../images/the_bay.jpg);
-  background-position: center bottom;
-  background-size: cover;
-  line-height: 1.75;
-  text-align: center;
-}
-
-.banner-text {
-  text-align: center;
-  margin-top: 4em;
-}
-
-.banner:last-child {
-  margin-bottom: 0;
-}
-
-.banner h3 {
-  color: #708fc1;
-  display: inline-block;
-  font-size: 1.35em;
-  line-height: 1.35;
-  margin-bottom: 0.5em;
-}
-
-@media screen and (max-width: 1280px) {
-
-  .banner {
-    padding: 14em 0 11em 0;
-  }
-
-  .banner h2 {
-    font-size: 2.5em;
-  }
-
-}
-
-@media screen and (max-width: 980px) {
-
-  .banner {
-    padding: 9em 0 7em 0;
-  }
-
-}
-
-@media screen and (max-width: 736px) {
-
-  .banner {
-    padding: 6em 2em 6em 2em;
-  }
-
-  .banner br {
-    display: none;
-  }
-
-  .banner h2 {
-    font-size: 2.25em;
-  }
-
-  .banner p {
-    font-size: 1.25em;
-  }
-
-}
-
-/* mobile */
-@media screen and (max-width: 480px) {
-
-  .banner {
-    padding: 4em 2em 4em 2em;
-    background-attachment: scroll;
-  }
-
-}
-
-.intro p {
-  text-transform: lowercase;
-}
-
-/* About Me */
-
-.about {
-  background-image: url(../images/chicago_skyscrapers.jpg);
-  background-position: center center;
-  background-size: cover;
-  position: relative;
-  background-repeat: no-repeat;
-}
-
-.about::after {
-  content: "";
-    background: url(../images/overlay.png);
-    opacity: 0.5;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;
-}
-
-.about-section {
-  padding-top: 4em;
-}
-
-.about-section p {
-  color: #edeeef;
-}
-
-@media screen and (max-width: 736px) {
-
-  .about-section {
-    padding-top: 2em;
-  }
-
-}
-
-/* Contact */
-
-.contact {
-  background-image: url(../images/chicago_skyscrapers2.jpg);
-  background-position: center center;
-  background-size: cover;
-  position: relative;
-  background-repeat: no-repeat;
-}
-
-.contact::after {
-  content: "";
-    background: url(../images/overlay.png);
-    opacity: 0.5;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;
-}
-
-.contact-section {
-  padding-top: 4em;
-}
-
-.contact-section h3 {
-  color: #edeeef;
-}
-
-@media screen and (max-width: 736px) {
-
-  .contact-section {
-    padding-top: 2em;
-  }
-
-}
-
-.contact-input {
-  background: #edeeef
-}
-
 /* Footer */
 
 .footer {
   padding: 8em 0 6em 0;
-  background: #f6f6f6;
+  background-color: #f6f6f6;
   color: #aaa;
   text-align: center;
 }
@@ -3123,4 +2943,212 @@ body.is-touch .banner {
     padding: 0;
   }
 
+}
+
+/* Main */
+.main {
+  margin-top: 0;
+}
+
+@media (max-width:750px) {
+  .main {
+    padding: 2rem 0;
+    margin-top: 3em;
+  }
+}
+
+/* home-banner */
+
+.background-image {
+  width: 100%;
+  height: 100%;
+}
+
+.background-image:before, .background-image:after {
+  content: "";
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: inherit;
+  height: inherit;
+  z-index: -10;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.background-image:after {
+  background-image: url(../images/overlay.png);
+  opacity: 0.5;
+}
+
+.home-background-image:before {
+  background-image: url(../images/the_bay.jpg);
+}
+
+.home-background-image:after {
+  opacity: 0.25;
+}
+
+.home-banner {
+  height: 100%;
+  padding: 16em 0 13em 0;
+  line-height: 1.75;
+  text-align: center;
+}
+
+.home-banner-text {
+  text-align: center;
+  margin-top: 4em;
+  padding-left: 3em;
+  padding-right: 3em;
+}
+
+.home-banner:last-child {
+  margin-bottom: 0;
+}
+
+.home-banner h3 {
+  color: #adf5ff;
+  display: inline-block;
+  font-size: 1.75em;
+  line-height: 1.35;
+  margin-bottom: 0.5em;
+}
+
+@media screen and (max-width: 1280px) {
+
+  .home-banner {
+    padding: 14em 0 11em 0;
+  }
+
+}
+
+@media screen and (max-width: 980px) {
+
+  .home-banner {
+    padding: 9em 0 7em 0;
+  }
+
+}
+
+@media screen and (max-width: 736px) {
+
+  .home-banner {
+    padding: 6em 2em 6em 2em;
+  }
+
+  .home-banner h3 {
+    font-size: 1.5em;
+  }
+
+}
+
+/* mobile */
+@media screen and (max-width: 480px) {
+
+  .home-banner {
+    padding: 4em 2em 4em 2em;
+    background-attachment: scroll;
+  }
+
+  .home-banner h3 {
+    font-size: 1.25em;
+  }
+
+  .home-banner-text {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+}
+
+.home-intro {
+  background-color: white;
+}
+
+.home-intro p {
+  text-transform: lowercase;
+}
+
+.home-footer {
+  background-color: transparent;
+}
+
+.home-footer a, li {
+  color: white;
+}
+
+/* About Me */
+
+.about-background-image:before {
+  background-image: url(../images/chicago_skyscrapers.jpg);
+  background-position: center top;
+}
+
+.about-section {
+  padding-top: 4em;
+}
+
+.about-section p {
+  color: #ededed;
+}
+
+@media screen and (max-width: 736px) {
+
+  .about-section {
+    padding-top: 2em;
+  }
+
+}
+
+.about-footer {
+  background-color: transparent;
+}
+
+.about-footer a, li {
+  color: white;
+}
+
+/* Contact */
+
+.contact-background-image:before {
+  background-image: url(../images/chicago_skyscrapers3.jpg);
+  background-posititon: center top;
+}
+
+.contact-background-image:after {
+  opacity: 0.35;
+}
+
+.contact-section {
+  padding-top: 4em;
+}
+
+.contact-section h3 {
+  color: #edeeef;
+}
+
+@media screen and (max-width: 736px) {
+
+  .contact-section {
+    padding-top: 2em;
+  }
+
+}
+
+.contact-input {
+  background: #edeeef
+}
+
+.contact-footer {
+  background-color: transparent;
+}
+
+.contact-footer a, li {
+  color: white;
 }
