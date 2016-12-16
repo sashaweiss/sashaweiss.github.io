@@ -2711,67 +2711,14 @@ table.alt tfoot {
 
 /* Wrapper */
 
-body.is-touch .wrapper.style3 {
-  background-attachment: scroll;
-}
-
 .wrapper {
-  padding: 6em 0 4em 0;
+  padding: 4em 0 4em 0;
 }
 
-.wrapper > .inner {
-  margin: 0 auto;
-  width: 60em;
-}
-
-.wrapper.style2 {
-  background-color: #f6f6f6;
-}
-
-.wrapper.style3 {
-  background-attachment: fixed;
-  background-position: center center;
-  background-size: cover;
-}
-
-.wrapper.style3 header.major {
-  margin-bottom: 3em;
-}
-
-.wrapper.style3 header.major h2 {
-  color: #ffffff;
-}
-
-@media screen and (max-width: 1280px) {
-
-  .wrapper.style3 header.major {
-    margin-bottom: 2em;
-  }
-
-}
-
-@media screen and (max-width: 980px) {
-
+@media screen and (max-width: 650px) {
   .wrapper {
-    padding: 4em 0 2em 0;
+    padding-top: 6em;
   }
-
-}
-
-@media screen and (max-width: 736px) {
-
-  .wrapper {
-    padding: 3em 0 1em 0;
-  }
-
-}
-
-@media screen and (max-width: 480px) {
-
-  .wrapper {
-    padding: 2em 0 0.1em 0;
-  }
-
 }
 
 /* Header */
@@ -2782,7 +2729,8 @@ body.is-touch .wrapper.style3 {
     z-index: 100;
     width: 100%;
     padding: 1.5rem 0;
-    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif
+    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /*margin-bottom: 3em;*/
 }
 
 .header-content {
@@ -2945,18 +2893,6 @@ body.is-touch .wrapper.style3 {
 
 }
 
-/* Main */
-.main {
-  margin-top: 0;
-}
-
-@media (max-width:750px) {
-  .main {
-    padding: 2rem 0;
-    margin-top: 3em;
-  }
-}
-
 /* home-banner */
 
 .background-image {
@@ -3090,20 +3026,10 @@ body.is-touch .wrapper.style3 {
   background-position: center top;
 }
 
-.about-section {
-  padding-top: 4em;
-}
+
 
 .about-section p {
   color: #ededed;
-}
-
-@media screen and (max-width: 736px) {
-
-  .about-section {
-    padding-top: 2em;
-  }
-
 }
 
 .about-footer {
@@ -3125,20 +3051,8 @@ body.is-touch .wrapper.style3 {
   opacity: 0.35;
 }
 
-.contact-section {
-  padding-top: 4em;
-}
-
 .contact-section h3 {
   color: #edeeef;
-}
-
-@media screen and (max-width: 736px) {
-
-  .contact-section {
-    padding-top: 2em;
-  }
-
 }
 
 .contact-input {
