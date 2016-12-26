@@ -2931,7 +2931,7 @@ table.alt tfoot {
 }
 
 .home-banner {
-  height: 100%;
+  height: 100vh;
   padding: 16em 0 13em 0;
   line-height: 1.75;
   text-align: center;
