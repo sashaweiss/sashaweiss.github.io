@@ -29,8 +29,19 @@ body {
 	padding: 1rem;
 }
 
-.header h1 {
-	/* float: left; */
+.header a {
+  transition: color 0.2s ease-in-out;
+  color: #444;
+  text-decoration: none;
+}
+
+.header a:hover {
+  color: #111;
+}
+
+.header li a {
+	font-weight: bold;
+  font-size: 1.25rem;
 }
 
 .header ul {
