@@ -1,6 +1,6 @@
 /* Globals */
 html {
-	font-family: Raleway, Monospace;
+	font-family: "Raleway", Monospace;
 }
 
 body {
@@ -11,7 +11,10 @@ body {
 .background {
 	background-attachment: fixed;
 	background-image: url("../images/overlay.png");
-	opacity: 0.5;
+}
+
+.background-home {
+	opacity: 0.80;
 }
 
 .home {
@@ -19,6 +22,7 @@ body {
 	background-image: url("../images/the_bay.jpg");
 	background-position: center bottom;
 	background-size: cover;
+	z-index: 10;
 }
 
 /* Header */
@@ -33,6 +37,7 @@ body {
   transition: color 0.2s ease-in-out;
   color: #444;
   text-decoration: none;
+	padding: 1rem;
 }
 
 .header a:hover {
@@ -52,15 +57,22 @@ body {
 	list-style-type: none;
 }
 
-.header ul li {
-	padding: 1rem;
-}
-
-@media (max-width: 480px) {
+@media (max-width: 620px) {
 	.header {
 		flex-direction: column;
 		text-align: center;
 		align-items: center;
-		background-color: teal;
 	}
+}
+
+/* Home cover text */
+.home-cover {
+	padding: 3rem;
+	padding-top: 6rem;
+	text-transform: lowercase;
+	text-align: center;
+	color: #00ccff;
+	font-weight: 900;
+	font-size: 1.75em;
+	line-height: 1.35;
 }
