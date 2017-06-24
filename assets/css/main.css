@@ -9,20 +9,19 @@ body {
 
 /* Background picture */
 .background {
-	background-attachment: fixed;
-	background-image: url("../images/overlay.png");
-}
-
-.background-home {
-	opacity: 0.80;
-}
-
-.home {
 	height: inherit;
-	background-image: url("../images/the_bay.jpg");
+	background-attachment: fixed;
 	background-position: center bottom;
 	background-size: cover;
 	z-index: 10;
+}
+
+.home-background {
+	background-image: linear-gradient(to bottom,
+		/* The last number here is the opacity of the overlay */
+		rgba(0, 0, 0, 0),
+		rgba(0, 0, 0, 0)
+	), url("../images/the_bay.jpg");
 }
 
 /* Header */
@@ -67,8 +66,7 @@ body {
 
 /* Home cover text */
 .home-cover {
-	padding: 3rem;
-	padding-top: 6rem;
+	padding: 6rem 4rem;
 	text-transform: lowercase;
 	text-align: center;
 	color: #00ccff;
