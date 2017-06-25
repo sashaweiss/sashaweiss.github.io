@@ -78,8 +78,12 @@ body {
 	}
 }
 
-/* Home cover text */
+/* Home cover */
 .home-cover {
+	height: 100vh;
+}
+
+.home-cover-text {
 	padding: 6rem 4rem;
 	text-transform: lowercase;
 	text-align: center;
@@ -87,4 +91,46 @@ body {
 	font-weight: 700;
 	font-size: 1.75em;
 	line-height: 1.35;
+}
+
+/* Intro banner */
+.intro-banner {
+	display: flex;
+	justify-content: space-between;
+	text-transform: lowercase;
+	background-color: white;
+	padding: 3rem 4rem;
+}
+
+.flex-eq-width {
+	flex: 1 1 0;
+}
+
+@media (max-width: 670px) {
+	.intro-banner {
+		flex-direction: column;
+	}
+
+	.flex-eq-width: {
+		flex: 0 1 auto;
+	}
+}
+
+.intro-banner-left {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	font-size: 1.25em;
+}
+
+.intro-banner h1,
+.intro-banner p {
+	margin: 0;
+	padding: 1rem;
+}
+
+.intro-banner-right {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
