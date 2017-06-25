@@ -30,13 +30,18 @@ body {
 	justify-content: space-between;
 	text-transform: lowercase;
 	padding: 1rem;
+	padding-top: 3rem;
+}
+
+.header h1 {
+	padding-left: 3rem;
+	margin: 0;
 }
 
 .header a {
   transition: color 0.2s ease-in-out;
   color: #444;
   text-decoration: none;
-	padding: 1rem;
 }
 
 .header a:hover {
@@ -46,6 +51,7 @@ body {
 .header li a {
 	font-weight: bold;
   font-size: 1.25rem;
+	padding: 1rem;
 }
 
 .header ul {
@@ -53,14 +59,22 @@ body {
 	display: flex;
 	margin: 0;
 	padding: 0;
+	padding-right: 3rem;
 	list-style-type: none;
 }
 
-@media (max-width: 620px) {
+@media (max-width: 650px) {
 	.header {
 		flex-direction: column;
-		text-align: center;
 		align-items: center;
+	}
+
+	.header ul {
+		padding: 0.5rem;
+	}
+
+	.header h1 {
+		padding: 0.5rem;
 	}
 }
 
