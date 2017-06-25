@@ -111,9 +111,20 @@ body {
 		flex-direction: column;
 	}
 
-	.flex-eq-width: {
+	.flex-eq-width {
 		flex: 0 1 auto;
 	}
+}
+
+.intro-banner h1 {
+	margin: 0;
+	padding: 1rem;
+	padding-bottom: 0rem;
+}
+
+.intro-banner p {
+	margin: 0;
+	padding: 1rem;
 }
 
 .intro-banner-left {
@@ -123,10 +134,8 @@ body {
 	font-size: 1.25em;
 }
 
-.intro-banner h1,
-.intro-banner p {
-	margin: 0;
-	padding: 1rem;
+.intro-banner-left p {
+	font-size: 1.25em;
 }
 
 .intro-banner-right {
