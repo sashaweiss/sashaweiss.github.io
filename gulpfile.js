@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var handlebars = require('gulp-compile-handlebars');
 var rename = require('gulp-rename');
 
-gulp.task('default', function () {
+gulp.task('index', function () {
 	options = {
 		batch : ['./src/partials'],
 	}
@@ -12,3 +12,16 @@ gulp.task('default', function () {
 		.pipe(rename('index.html'))
 		.pipe(gulp.dest('dist'));
 });
+
+gulp.task('about', function () {
+	options = {
+		batch : ['./src/partials'],
+	}
+
+	return gulp.src('src/about.hbs')
+		.pipe(handlebars({}, options))
+		.pipe(rename('about.html'))
+		.pipe(gulp.dest('dist'));
+});
+
+gulp.task('default', ['index', 'about']);
