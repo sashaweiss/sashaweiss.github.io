@@ -205,4 +205,13 @@ body {
 .about {
 	display: flex;
 	flex-direction: column;
+	text-transform: lowercase;
 }
+
+.about h1,
+.about h3,
+.about p {
+	margin: 0;
+	padding: 1rem 4rem;
+}
+
