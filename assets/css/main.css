@@ -205,7 +205,6 @@ body {
 .about {
 	display: flex;
 	flex-direction: column;
-	text-transform: lowercase;
 }
 
 .about h1,
@@ -215,3 +214,18 @@ body {
 	padding: 1rem 4rem;
 }
 
+.about p {
+	color: white;
+	line-height: 1.5;
+}
+
+.about p a {
+	color: white;
+	font-weight: bold;
+}
+
+.about h1,
+.about h3 {
+	text-transform: lowercase;
+	color: #222;
+}
