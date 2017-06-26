@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var handlebars = require('gulp-compile-handlebars');
 var rename = require('gulp-rename');
+var browserSync = require('browser-sync');
 
 gulp.task('index', function () {
 	options = {
@@ -24,10 +25,19 @@ gulp.task('about', function () {
 		.pipe(gulp.dest('dist'));
 });
 
-console.log('Watching src/ and assets/ for changes...');
 var tasks = ['index', 'about'];
-var watcher = gulp.watch(['src/**/*', 'assets/**/*'], tasks);
-watcher.on('change', function (event) {
-	console.log(`File ${event.path} was ${event.type}, running tasks: ${tasks.map((t) => `"${t}"`).join(', ')}...`);
+gulp.task('watch', tasks, function(done) {
+	browserSync.reload();
+	done();
+});
+
+gulp.task('default', ['watch'], function () {
+	browserSync.init({
+		server: {
+			baseDir: './'
+		}
+	});
+
+	gulp.watch(['src/**/*', 'assets/**/*'], ['watch']);
 });
 
