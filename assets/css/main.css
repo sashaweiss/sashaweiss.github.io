@@ -24,6 +24,15 @@ body {
 	), url("../images/the_bay.jpg");
 }
 
+.about-background {
+	background-image: linear-gradient(to bottom,
+		/* The last number here is the opacity of the overlay */
+		rgba(0, 0, 0, 0.2),
+		rgba(0, 0, 0, 0.2)
+	), url("../images/chicago_skyscrapers.jpg");
+	background-position: center top;
+}
+
 /* Header */
 .header {
 	display: flex;
@@ -192,3 +201,8 @@ body {
 	color: white;
 }
 
+/* About */
+.about {
+	display: flex;
+	flex-direction: column;
+}
