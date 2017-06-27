@@ -90,8 +90,8 @@ body {
 	height: 100vh;
 }
 
-/* Intro banner */
-.intro-banner {
+/* Banner */
+.banner {
 	display: flex;
 	justify-content: space-between;
 	text-transform: lowercase;
@@ -100,6 +100,7 @@ body {
 	padding: 3rem 4rem;
 }
 
+/* Intro banner */
 .flex-eq-width {
 	flex: 1 1 0;
 }
