@@ -2,12 +2,14 @@
   "devDependencies": {
     "browser-sync": "^2.18.12",
     "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.4.2",
     "gulp-compile-handlebars": "^0.6.1",
+    "gulp-htmlmin": "^3.0.0",
     "gulp-rename": "^1.2.2",
-    "gulp-replace": "^0.6.1",
-    "gulp-uglify": "^3.0.0"
+    "gulp-replace": "^0.6.1"
   },
   "scripts": {
-    "build": "./node_modules/.bin/gulp"
+    "build": "./node_modules/.bin/gulp build",
+    "watch": "./node_modules/.bin/gulp"
   }
 }
