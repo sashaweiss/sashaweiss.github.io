@@ -9,7 +9,9 @@ gulp.task('index', function () {
 	}
 
 	return gulp.src('src/index.hbs')
-		.pipe(handlebars({}, options))
+		.pipe(handlebars({
+			photoCredit: 'Photo: Jennie Werner'
+		}, options))
 		.pipe(rename('index.html'))
 		.pipe(gulp.dest('dist'));
 });

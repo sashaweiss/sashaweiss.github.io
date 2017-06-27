@@ -12,7 +12,6 @@ body {
 	height: inherit;
 	background-attachment: fixed;
 	background-size: cover;
-	z-index: 10;
 }
 
 .home-background {
@@ -38,8 +37,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	text-transform: lowercase;
-	padding: 1rem;
-	padding-top: 3rem;
+	padding: 3rem 2rem;
 }
 
 .header h1 {
@@ -87,19 +85,9 @@ body {
 	}
 }
 
-/* Home cover */
-.home-cover {
+/* Covers */
+.cover {
 	height: 100vh;
-}
-
-.home-cover-text {
-	padding: 6rem 4rem;
-	text-transform: lowercase;
-	text-align: center;
-	color: #ed61ff;
-	font-weight: 700;
-	font-size: 1.75em;
-	line-height: 1.35;
 }
 
 /* Intro banner */

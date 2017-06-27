@@ -5,31 +5,13 @@
 	</head>
 
 	<body class="background home-background">
-		<!-- Initial cover -->
-		<div class="home-cover">
+		{{> header}}
 
-			{{> header}}
+		<div class="cover"></div>
 
-			<!-- Cover text -->
-			<!--
-			<section class="home-cover-text">
-				I'm from Chicago. This photo's from San Francisco. I used to think <i>we</i> had weird weather...
-			</section>
-			-->
+		<div id="intro" class="cover">
+			{{> intro_banner }}
 		</div>
-
-		<!-- Introduction banner -->
-		<section class="intro-banner">
-			<div class="intro-banner-left flex-eq-width">
-				<h1>I have the same initials as Star Wars</h1>
-				<p>How cool is that?</p>
-			</div>
-			<div class="intro-banner-right flex-eq-width">
-				<p>I study Computer Science at Northwestern University, where I'm in my last year.</p>
-				<p>At Northwestern, I do research in the <a href="http://delta.northwestern.edu/">Delta Lab</a>'s <a href="http://dtr.northwestern.edu">Design, Technology, and Research</a> program. I'm also the Design Supervisor for <a href="http://vertigoplays.org">Vertigo Productions</a>, a student theater company dedicated to new work.</p>
-				<p>Currently, I'm a software engineering intern for <a href="https://www.braintreepayments.com/">Braintree</a>, in San Francisco. I'm from Chicago - mountains are nuts.</p>
-			</div>
-		</section>
 
 		{{> footer}}
 	</body>
