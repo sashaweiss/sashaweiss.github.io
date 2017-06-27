@@ -215,6 +215,7 @@ body {
 .acknowledgements li {
 	padding: 0 2rem;
 	color: white;
+	text-align: center;
 }
 
 /* About */
