@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var handlebars = require('gulp-compile-handlebars');
 var rename = require('gulp-rename');
+var uglify = require('gulp-uglify');
+var replace = require('gulp-replace');
 var browserSync = require('browser-sync');
 
 gulp.task('index', function () {
@@ -12,22 +14,29 @@ gulp.task('index', function () {
 		.pipe(handlebars({
 			photoCredit: 'Photo: Jennie Werner'
 		}, options))
-		.pipe(rename('index.html'))
+		.pipe(replace('@MAIN_DOT_CSS', './main.min.css'))
+		.pipe(replace('@NORMALIZE_DOT_CSS', './normalize.min.css'))
+		.pipe(replace('@FONTAWESOME_DOT_CSS', '../assets/css/font-awesome-4.7.0/css/font-awesome.min.css'))
+		.pipe(uglify())
+		.pipe(rename('index.min.html'))
 		.pipe(gulp.dest('dist'));
 });
 
-gulp.task('about', function () {
-	options = {
-		batch : ['./src/partials'],
-	}
-
-	return gulp.src('src/about.hbs')
-		.pipe(handlebars({}, options))
-		.pipe(rename('about.html'))
+gulp.task('normalize.css', function () {
+	return gulp.src('assets/css/normalize.css')
+		.pipe(uglify())
+		.pipe(rename('normalize.min.css'))
 		.pipe(gulp.dest('dist'));
 });
 
-var tasks = ['index', 'about'];
+gulp.task('main.css', function () {
+	return gulp.src('assets/css/main.css')
+		.pipe(uglify())
+		.pipe(rename('main.min.css'))
+		.pipe(gulp.dest('dist'));
+});
+
+var tasks = ['index', 'main.css', 'normalize.css'];
 gulp.task('watch', tasks, function(done) {
 	browserSync.reload();
 	done();
