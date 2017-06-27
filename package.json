@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-compile-handlebars": "^0.6.1",
+    "gulp-rename": "^1.2.2"
+  },
+  "scripts": {
+    "build": "./node_modules/.bin/gulp"
+  }
+}
