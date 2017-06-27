@@ -113,6 +113,7 @@ body {
 }
 
 .intro-banner p {
+	line-height: 1.75;
 	margin: 0;
 	padding: 1rem;
 }

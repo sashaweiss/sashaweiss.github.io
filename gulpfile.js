@@ -12,9 +12,7 @@ gulp.task('index', function () {
 	}
 
 	return gulp.src('src/index.hbs')
-		.pipe(handlebars({
-			photoCredit: 'Photo: Jennie Werner'
-		}, options))
+		.pipe(handlebars({}, options))
 		.pipe(replace('@MAIN_DOT_CSS', './main.min.css'))
 		.pipe(replace('@NORMALIZE_DOT_CSS', './normalize.min.css'))
 		.pipe(replace('@FONTAWESOME_DOT_CSS', '../assets/css/font-awesome-4.7.0/css/font-awesome.min.css'))
