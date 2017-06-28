@@ -15,14 +15,16 @@ gulp.task('index', function () {
 		.pipe(handlebars({}, options))
 		.pipe(replace('@MAIN_DOT_CSS', './main.min.css'))
 		.pipe(replace('@NORMALIZE_DOT_CSS', './normalize.min.css'))
-		.pipe(replace('@FONTAWESOME_DOT_CSS', '../assets/css/font-awesome-4.7.0/css/font-awesome.min.css'))
+		.pipe(replace('@FONTAWESOME_DOT_CSS', '../node_modules/font-awesome/css/font-awesome.min.css'))
+		.pipe(replace('@RESIZE_DOT_JS', '../assets/js/resize.js'))
+		.pipe(replace('@JQUERY_DOT_JS', '../node_modules/jquery/dist/jquery.slim.min.js'))
 		.pipe(htmlmin({collapseWhitespace: true}))
 		.pipe(rename('index.min.html'))
 		.pipe(gulp.dest('dist'));
 });
 
 gulp.task('normalize.css', function () {
-	return gulp.src('assets/css/normalize.css')
+	return gulp.src('node_modules/normalize.css/normalize.css')
 		.pipe(cleancss())
 		.pipe(rename('normalize.min.css'))
 		.pipe(gulp.dest('dist'));

@@ -11,5 +11,10 @@
   "scripts": {
     "build": "./node_modules/.bin/gulp build",
     "watch": "./node_modules/.bin/gulp"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1",
+    "normalize.css": "^7.0.0"
   }
 }
