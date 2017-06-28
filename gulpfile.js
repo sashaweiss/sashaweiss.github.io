@@ -17,8 +17,8 @@ gulp.task('index.html', function () {
 		.pipe(replace('@MAIN_DOT_CSS', './main.min.css'))
 		.pipe(replace('@ADJUST_DOT_JS', './adjust.min.js'))
 		.pipe(replace('@NORMALIZE_DOT_CSS', './normalize.min.css'))
-		.pipe(replace('@FONTAWESOME_DOT_CSS', './font-awesome.min.css'))
 		.pipe(replace('@JQUERY_DOT_JS', './jquery.min.js'))
+		.pipe(replace('@FONTAWESOME_DOT_CSS', '../assets/css/font-awesome/css/font-awesome.min.css'))
 		.pipe(htmlmin({collapseWhitespace: true}))
 		.pipe(rename('index.min.html'))
 		.pipe(gulp.dest('dist'));
@@ -26,11 +26,6 @@ gulp.task('index.html', function () {
 
 gulp.task('jquery', function () {
 	return gulp.src('node_modules/jquery/dist/jquery.min.js')
-		.pipe(gulp.dest('dist'));
-});
-
-gulp.task('font-awesome', function () {
-	return gulp.src('node_modules/font-awesome/css/font-awesome.min.css')
 		.pipe(gulp.dest('dist'));
 });
 
@@ -61,8 +56,7 @@ var tasks = [
 	'main.css',
 	'adjust.js',
 	'normalize.css',
-	'jquery',
-	'font-awesome'
+	'jquery'
 ];
 gulp.task('build', tasks);
 
