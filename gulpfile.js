@@ -4,9 +4,10 @@ var rename = require('gulp-rename');
 var replace = require('gulp-replace');
 var htmlmin = require('gulp-htmlmin');
 var cleancss = require('gulp-clean-css');
+var uglify = require('gulp-uglify');
 var browserSync = require('browser-sync');
 
-gulp.task('index', function () {
+gulp.task('index.html', function () {
 	options = {
 		batch : ['./src/partials'],
 	}
@@ -14,10 +15,10 @@ gulp.task('index', function () {
 	return gulp.src('src/index.hbs')
 		.pipe(handlebars({}, options))
 		.pipe(replace('@MAIN_DOT_CSS', './main.min.css'))
+		.pipe(replace('@ADJUST_DOT_JS', './adjust.min.js'))
 		.pipe(replace('@NORMALIZE_DOT_CSS', './normalize.min.css'))
 		.pipe(replace('@FONTAWESOME_DOT_CSS', '../node_modules/font-awesome/css/font-awesome.min.css'))
-		.pipe(replace('@RESIZE_DOT_JS', '../assets/js/resize.js'))
-		.pipe(replace('@JQUERY_DOT_JS', '../node_modules/jquery/dist/jquery.slim.min.js'))
+		.pipe(replace('@JQUERY_DOT_JS', '../node_modules/jquery/dist/jquery.min.js'))
 		.pipe(htmlmin({collapseWhitespace: true}))
 		.pipe(rename('index.min.html'))
 		.pipe(gulp.dest('dist'));
@@ -38,7 +39,14 @@ gulp.task('main.css', function () {
 		.pipe(gulp.dest('dist'));
 });
 
-var tasks = ['index', 'main.css', 'normalize.css'];
+gulp.task('adjust.js', function () {
+	return gulp.src('assets/js/adjust.js')
+		.pipe(uglify())
+		.pipe(rename('adjust.min.js'))
+		.pipe(gulp.dest('dist'));
+});
+
+var tasks = ['index.html', 'main.css', 'adjust.js', 'normalize.css'];
 gulp.task('build', tasks);
 
 gulp.task('reload', ['build'], function(done) {

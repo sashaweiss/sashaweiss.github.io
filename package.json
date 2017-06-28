@@ -6,7 +6,8 @@
     "gulp-compile-handlebars": "^0.6.1",
     "gulp-htmlmin": "^3.0.0",
     "gulp-rename": "^1.2.2",
-    "gulp-replace": "^0.6.1"
+    "gulp-replace": "^0.6.1",
+    "gulp-uglify": "^3.0.0"
   },
   "scripts": {
     "build": "./node_modules/.bin/gulp build",
