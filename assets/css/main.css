@@ -220,3 +220,8 @@ body {
 	text-align: center;
 }
 
+.acknowledgements li a {
+	color: inherit;
+	text-decoration: none;
+}
+
