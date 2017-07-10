@@ -14,41 +14,42 @@ gulp.task('index.html', function () {
 
 	return gulp.src('src/index.hbs')
 		.pipe(handlebars({}, options))
-		.pipe(replace('@MAIN_DOT_CSS', './main.min.css'))
-		.pipe(replace('@ADJUST_DOT_JS', './adjust.min.js'))
-		.pipe(replace('@NORMALIZE_DOT_CSS', './normalize.min.css'))
-		.pipe(replace('@JQUERY_DOT_JS', './jquery.min.js'))
-		.pipe(replace('@FONTAWESOME_DOT_CSS', '../assets/css/font-awesome/css/font-awesome.min.css'))
+		.pipe(replace('@MAIN_DOT_CSS', 'assets/css/main.min.css'))
+		.pipe(replace('@ADJUST_DOT_JS', 'assets/js/adjust.min.js'))
+		.pipe(replace('@NORMALIZE_DOT_CSS', 'assets/includes/normalize.min.css'))
+		.pipe(replace('@JQUERY_DOT_JS', 'assets/includes/jquery.min.js'))
+		.pipe(replace('@FONTAWESOME_DOT_CSS', 'assets/includes/font-awesome/css/font-awesome.min.css'))
+		.pipe(replace('@FAVICON_DOT_ICO', 'assets/images/ls_favicon.ico'))
 		.pipe(htmlmin({collapseWhitespace: true}))
-		.pipe(rename('index.min.html'))
-		.pipe(gulp.dest('dist'));
+		.pipe(rename('index.html'))
+		.pipe(gulp.dest('.'));
 });
 
 gulp.task('jquery', function () {
 	return gulp.src('node_modules/jquery/dist/jquery.min.js')
-		.pipe(gulp.dest('dist'));
+		.pipe(gulp.dest('assets/includes'));
 });
 
 gulp.task('normalize.css', function () {
 	return gulp.src('node_modules/normalize.css/normalize.css')
 		.pipe(cleancss())
 		.pipe(rename('normalize.min.css'))
-		.pipe(gulp.dest('dist'));
+		.pipe(gulp.dest('assets/includes'));
 });
 
 gulp.task('main.css', function () {
 	return gulp.src('assets/css/main.css')
-		.pipe(replace('@BAY_PHOTO', '../assets/images/the_bay.jpg'))
+		.pipe(replace('@BAY_PHOTO', '../images/the_bay.jpg'))
 		.pipe(cleancss())
 		.pipe(rename('main.min.css'))
-		.pipe(gulp.dest('dist'));
+		.pipe(gulp.dest('assets/css'));
 });
 
 gulp.task('adjust.js', function () {
 	return gulp.src('assets/js/adjust.js')
 		.pipe(uglify())
 		.pipe(rename('adjust.min.js'))
-		.pipe(gulp.dest('dist'));
+		.pipe(gulp.dest('assets/js'));
 });
 
 var tasks = [
