@@ -9,10 +9,10 @@ var browserSync = require('browser-sync');
 
 gulp.task('index.html', function () {
 	options = {
-		batch : ['./src/partials'],
+		batch : ['assets/hbs/partials'],
 	}
 
-	return gulp.src('src/index.hbs')
+	return gulp.src('assets/hbs/index.hbs')
 		.pipe(handlebars({}, options))
 		.pipe(replace('@MAIN_DOT_CSS', 'assets/css/main.min.css'))
 		.pipe(replace('@ADJUST_DOT_JS', 'assets/js/adjust.min.js'))
