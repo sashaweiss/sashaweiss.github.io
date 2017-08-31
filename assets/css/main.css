@@ -96,15 +96,22 @@ body {
 .banner {
 	display: flex;
 	justify-content: space-between;
-	text-transform: lowercase;
 	background-color: white;
 	opacity: 0.9;
 	padding: 3rem 4rem;
 }
 
+.banner h1, .banner h2 {
+	text-transform: lowercase;
+}
+
 /* Intro banner */
 .flex-eq-width {
 	flex: 1 1 0;
+}
+
+.intro-banner-left {
+	text-transform: lowercase;
 }
 
 @media (max-width: 670px) {
