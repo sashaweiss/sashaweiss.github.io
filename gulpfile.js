@@ -39,7 +39,7 @@ gulp.task('normalize.css', function () {
 
 gulp.task('main.css', function () {
 	return gulp.src('assets/css/main.css')
-		.pipe(replace('@BAY_PHOTO', '../images/the_bay.jpg'))
+		.pipe(replace('@BAY_PHOTO', '../images/hydrogen.png'))
 		.pipe(cleancss())
 		.pipe(rename('main.min.css'))
 		.pipe(gulp.dest('assets/css'));
