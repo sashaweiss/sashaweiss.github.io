@@ -7,7 +7,7 @@ const cleancss = require('gulp-clean-css');
 const uglify = require('gulp-uglify');
 const browserSync = require('browser-sync');
 
-function indexhtml () {
+function indexhtml() {
 	options = {
 		batch : ['src/hbs/partials'],
 	}
@@ -24,7 +24,7 @@ function indexhtml () {
 		.pipe(gulp.dest('.'));
 };
 
-function maincss () {
+function maincss() {
 	return gulp.src('src/css/main.css')
     .pipe(replace('@BAY_PHOTO', '../src/images/hydrogen.png'))
 		.pipe(cleancss())
@@ -39,27 +39,35 @@ function adjust() {
     .pipe(gulp.dest('build'));
 }
 
-function normalizecss () {
+function normalizecss() {
 	return gulp.src('node_modules/normalize.css/normalize.css')
 		.pipe(cleancss())
 		.pipe(rename('normalize.min.css'))
 		.pipe(gulp.dest('build'));
 };
 
-function jquery () {
+function jquery() {
 	return gulp.src('node_modules/jquery/dist/jquery.min.js')
 		.pipe(gulp.dest('build'));
 };
 
-gulp.task('build', gulp.parallel(indexhtml, maincss, adjust, normalizecss, jquery));
+function reloadBrowserSync(done) {
+  browserSync.reload();
+  done();
+}
 
-gulp.task('default', function () {
+const build = gulp.parallel(indexhtml, maincss, adjust, normalizecss, jquery);
+const reload = gulp.series(build, reloadBrowserSync);
+
+function watch() {
 	browserSync.init({
 		server: {
 			baseDir: './'
 		}
 	});
 
-  gulp.watch('src/**/*', gulp.series('build')).on('change', browserSync.reload);
-});
+  gulp.watch('src/**/*', reload);
+}
 
+exports.build = gulp.series(build);
+exports.default = gulp.series(build, watch);
