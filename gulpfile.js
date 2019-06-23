@@ -7,7 +7,7 @@ var cleancss = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
 var browserSync = require('browser-sync');
 
-gulp.task('index.html', function () {
+function indexhtml () {
 	options = {
 		batch : ['assets/hbs/partials'],
 	}
@@ -23,56 +23,49 @@ gulp.task('index.html', function () {
 		.pipe(htmlmin({collapseWhitespace: true}))
 		.pipe(rename('index.html'))
 		.pipe(gulp.dest('.'));
-});
+};
 
-gulp.task('jquery', function () {
+function jquery () {
 	return gulp.src('node_modules/jquery/dist/jquery.min.js')
 		.pipe(gulp.dest('assets/includes'));
-});
+};
 
-gulp.task('normalize.css', function () {
+function normalizecss () {
 	return gulp.src('node_modules/normalize.css/normalize.css')
 		.pipe(cleancss())
 		.pipe(rename('normalize.min.css'))
 		.pipe(gulp.dest('assets/includes'));
-});
+};
 
-gulp.task('main.css', function () {
+function maincss () {
 	return gulp.src('assets/css/main.css')
 		.pipe(replace('@BAY_PHOTO', '../images/hydrogen.png'))
 		.pipe(cleancss())
 		.pipe(rename('main.min.css'))
 		.pipe(gulp.dest('assets/css'));
-});
+};
 
-gulp.task('adjust.js', function () {
-	return gulp.src('assets/js/adjust.js')
-		.pipe(uglify())
-		.pipe(rename('adjust.min.js'))
-		.pipe(gulp.dest('assets/js'));
-});
+function adjust() {
+  return gulp.src('assets/js/adjust.js')
+    .pipe(uglify())
+    .pipe(rename('adjust.min.js'))
+    .pipe(gulp.dest('assets/js'));
+}
 
-var tasks = [
-	'index.html',
-	'main.css',
-	'adjust.js',
-	'normalize.css',
-	'jquery'
-];
-gulp.task('build', tasks);
+gulp.task('build', gulp.parallel(indexhtml, maincss, adjust, normalizecss, jquery));
 
-gulp.task('reload', ['build'], function(done) {
+gulp.task('reload', gulp.series(['build']), function(done) {
 	browserSync.reload();
 	done();
 });
 
-gulp.task('default', ['reload'], function () {
+gulp.task('default', gulp.series(['reload']), function () {
 	browserSync.init({
 		server: {
 			baseDir: './'
 		}
 	});
 
-	gulp.watch(['src/**/*', 'assets/**/*'], ['reload']);
+	gulp.watch('assets/**/*', ['reload']);
 });
 
