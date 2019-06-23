@@ -9,17 +9,17 @@ const browserSync = require('browser-sync');
 
 function indexhtml () {
 	options = {
-		batch : ['assets/hbs/partials'],
+		batch : ['src/hbs/partials'],
 	}
 
-	return gulp.src('assets/hbs/index.hbs')
+	return gulp.src('src/hbs/index.hbs')
 		.pipe(handlebars({}, options))
-		.pipe(replace('@MAIN_DOT_CSS', 'assets/css/main.min.css'))
-		.pipe(replace('@ADJUST_DOT_JS', 'assets/js/adjust.min.js'))
-		.pipe(replace('@NORMALIZE_DOT_CSS', 'assets/includes/normalize.min.css'))
-		.pipe(replace('@JQUERY_DOT_JS', 'assets/includes/jquery.min.js'))
-		.pipe(replace('@FONTAWESOME_DOT_CSS', 'assets/includes/font-awesome/css/font-awesome.min.css'))
-		.pipe(replace('@FAVICON_DOT_ICO', 'assets/images/ls_favicon.ico'))
+		.pipe(replace('@MAIN_DOT_CSS', 'build/main.min.css'))
+		.pipe(replace('@ADJUST_DOT_JS', 'build/adjust.min.js'))
+    .pipe(replace('@NORMALIZE_DOT_CSS', 'build/normalize.min.css'))
+    .pipe(replace('@JQUERY_DOT_JS', 'build/jquery.min.js'))
+		.pipe(replace('@FONTAWESOME_DOT_CSS', 'src/includes/font-awesome/css/font-awesome.min.css'))
+		.pipe(replace('@FAVICON_DOT_ICO', 'src/images/ls_favicon.ico'))
 		.pipe(htmlmin({collapseWhitespace: true}))
 		.pipe(rename('index.html'))
 		.pipe(gulp.dest('.'));
@@ -27,29 +27,29 @@ function indexhtml () {
 
 function jquery () {
 	return gulp.src('node_modules/jquery/dist/jquery.min.js')
-		.pipe(gulp.dest('assets/includes'));
+		.pipe(gulp.dest('build'));
 };
 
 function normalizecss () {
 	return gulp.src('node_modules/normalize.css/normalize.css')
 		.pipe(cleancss())
 		.pipe(rename('normalize.min.css'))
-		.pipe(gulp.dest('assets/includes'));
+		.pipe(gulp.dest('build'));
 };
 
 function maincss () {
-	return gulp.src('assets/css/main.css')
-		.pipe(replace('@BAY_PHOTO', '../images/hydrogen.png'))
+	return gulp.src('src/css/main.css')
+    .pipe(replace('@BAY_PHOTO', '../src/images/hydrogen.png'))
 		.pipe(cleancss())
 		.pipe(rename('main.min.css'))
-		.pipe(gulp.dest('assets/css'));
+		.pipe(gulp.dest('build'));
 };
 
 function adjust() {
-  return gulp.src('assets/js/adjust.js')
+  return gulp.src('src/js/adjust.js')
     .pipe(uglify())
     .pipe(rename('adjust.min.js'))
-    .pipe(gulp.dest('assets/js'));
+    .pipe(gulp.dest('build'));
 }
 
 gulp.task('build', gulp.parallel(indexhtml, maincss, adjust, normalizecss, jquery));
@@ -61,6 +61,6 @@ gulp.task('default', function () {
 		}
 	});
 
-  gulp.watch(['assets/**/*', '!assets/**/*.min.*'], gulp.series('build')).on('change', browserSync.reload);
+  gulp.watch(['src/**/*', '!src/**/*.min.*'], gulp.series('build')).on('change', browserSync.reload);
 });
 
