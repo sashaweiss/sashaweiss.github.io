@@ -54,13 +54,13 @@ function adjust() {
 
 gulp.task('build', gulp.parallel(indexhtml, maincss, adjust, normalizecss, jquery));
 
-gulp.task('default', gulp.series(['build']), function () {
+gulp.task('default', function () {
 	browserSync.init({
 		server: {
 			baseDir: './'
 		}
 	});
 
-	gulp.watch('assets/**/*').on('change', browserSync.reload);
+  gulp.watch(['assets/**/*', '!assets/**/*.min.*'], gulp.series('build')).on('change', browserSync.reload);
 });
 
