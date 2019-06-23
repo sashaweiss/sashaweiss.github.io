@@ -18,7 +18,6 @@ function indexhtml () {
 		.pipe(replace('@ADJUST_DOT_JS', 'build/adjust.min.js'))
     .pipe(replace('@NORMALIZE_DOT_CSS', 'build/normalize.min.css'))
     .pipe(replace('@JQUERY_DOT_JS', 'build/jquery.min.js'))
-		.pipe(replace('@FONTAWESOME_DOT_CSS', 'build/font-awesome/css/font-awesome.min.css'))
 		.pipe(replace('@FAVICON_DOT_ICO', 'src/images/ls_favicon.ico'))
 		.pipe(htmlmin({collapseWhitespace: true}))
 		.pipe(rename('index.html'))
@@ -52,11 +51,7 @@ function jquery () {
 		.pipe(gulp.dest('build'));
 };
 
-function fontawesome() {
-  return gulp.src(['src/includes/font-awesome/**/*', '!src/includes/font-awesome/css/font-awesome.css']).pipe(gulp.dest('build'));
-};
-
-gulp.task('build', gulp.parallel(indexhtml, maincss, adjust, normalizecss, jquery, fontawesome));
+gulp.task('build', gulp.parallel(indexhtml, maincss, adjust, normalizecss, jquery));
 
 gulp.task('default', function () {
 	browserSync.init({
@@ -65,6 +60,6 @@ gulp.task('default', function () {
 		}
 	});
 
-  gulp.watch(['src/**/*', '!src/**/*.min.*'], gulp.series('build')).on('change', browserSync.reload);
+  gulp.watch('src/**/*', gulp.series('build')).on('change', browserSync.reload);
 });
 
