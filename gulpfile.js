@@ -1,11 +1,11 @@
-var gulp = require('gulp');
-var handlebars = require('gulp-compile-handlebars');
-var rename = require('gulp-rename');
-var replace = require('gulp-replace');
-var htmlmin = require('gulp-htmlmin');
-var cleancss = require('gulp-clean-css');
-var uglify = require('gulp-uglify');
-var browserSync = require('browser-sync');
+const gulp = require('gulp');
+const handlebars = require('gulp-compile-handlebars');
+const rename = require('gulp-rename');
+const replace = require('gulp-replace');
+const htmlmin = require('gulp-htmlmin');
+const cleancss = require('gulp-clean-css');
+const uglify = require('gulp-uglify');
+const browserSync = require('browser-sync');
 
 function indexhtml () {
 	options = {
@@ -54,18 +54,13 @@ function adjust() {
 
 gulp.task('build', gulp.parallel(indexhtml, maincss, adjust, normalizecss, jquery));
 
-gulp.task('reload', gulp.series(['build']), function(done) {
-	browserSync.reload();
-	done();
-});
-
-gulp.task('default', gulp.series(['reload']), function () {
+gulp.task('default', gulp.series(['build']), function () {
 	browserSync.init({
 		server: {
 			baseDir: './'
 		}
 	});
 
-	gulp.watch('assets/**/*', ['reload']);
+	gulp.watch('assets/**/*').on('change', browserSync.reload);
 });
 
