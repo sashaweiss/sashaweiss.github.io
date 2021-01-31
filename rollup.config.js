@@ -1,10 +1,11 @@
-import svelte from "rollup-plugin-svelte";
 import commonjs from "@rollup/plugin-commonjs";
-import resolve from "@rollup/plugin-node-resolve";
-import { terser } from "rollup-plugin-terser";
-import sveltePreprocess from "svelte-preprocess";
-import typescript from "@rollup/plugin-typescript";
+import copy from "rollup-plugin-copy";
 import css from "rollup-plugin-css-only";
+import resolve from "@rollup/plugin-node-resolve";
+import svelte from "rollup-plugin-svelte";
+import sveltePreprocess from "svelte-preprocess";
+import { terser } from "rollup-plugin-terser";
+import typescript from "@rollup/plugin-typescript";
 
 const production = process.env.PRODUCTION !== undefined;
 
@@ -14,9 +15,17 @@ export default {
         sourcemap: true,
         format: "iife",
         name: "app",
-        file: "public/build/bundle.js",
+        file: `dist/${production ? "release" : "debug"}/build/bundle.js`,
     },
     plugins: [
+        copy({
+            targets: [
+                {
+                    src: "src/index.html",
+                    dest: `dist/${production ? "release" : "debug"}`,
+                },
+            ],
+        }),
         svelte({
             include: "src/**/*.svelte",
             preprocess: sveltePreprocess({
