@@ -1,6 +1,12 @@
+<script>
+    import VStack from "./VStack.svelte";
+</script>
+
 <div class="wrapper">
-    <h1>Sasha Weiss</h1>
-    <p>Software Engineer</p>
+    <VStack>
+        <h1>Sasha Weiss</h1>
+        <p>Software Engineer</p>
+    </VStack>
 </div>
 
 <style>
