@@ -3,18 +3,21 @@
     import Headline from "./Headline.svelte";
     import About from "./About.svelte";
     import Footer from "./Footer.svelte";
+    import VStack from "./VStack.svelte";
 </script>
 
 <main>
-    <Section height="25%" bgColor="lightgreen">
-        <Headline />
-    </Section>
-    <Section bgColor="lightblue">
-        <About />
-    </Section>
-    <Section bgColor="magenta">
-        <Footer />
-    </Section>
+    <VStack>
+        <Section bgColor="lightgreen">
+            <Headline />
+        </Section>
+        <Section flexGrow="1" bgColor="lightblue">
+            <About />
+        </Section>
+        <Section bgColor="magenta">
+            <Footer />
+        </Section>
+    </VStack>
 </main>
 
 <style>

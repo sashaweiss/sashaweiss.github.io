@@ -1,11 +1,9 @@
 <script lang="ts">
-    export let bgColor: string;
-    export let height: string;
+    export let flexGrow: string = "initial";
+    export let bgColor: string = "initial";
 </script>
 
-<section
-    style="height: {height ? height : 'unset'}; background-color: {bgColor}"
->
+<section style="flex-grow: {flexGrow}; background-color: {bgColor}">
     <slot />
 </section>
 

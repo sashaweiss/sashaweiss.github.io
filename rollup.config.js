@@ -9,6 +9,17 @@ import typescript from "@rollup/plugin-typescript";
 
 const production = process.env.PRODUCTION !== undefined;
 
+function runSvelteCheck() {
+    return {
+        writeBundle() {
+            require("child_process").spawn("svelte-check", {
+                stdio: ["ignore", "inherit", "inherit"],
+                shell: true,
+            });
+        },
+    };
+}
+
 export default {
     input: "src/main.ts",
     output: {
@@ -18,6 +29,16 @@ export default {
         file: `dist/${production ? "release" : "debug"}/build/bundle.js`,
     },
     plugins: [
+        runSvelteCheck(),
+        svelte({
+            include: "src/**/*.svelte",
+            preprocess: sveltePreprocess({
+                sourceMap: !production,
+            }),
+            compilerOptions: {
+                dev: !production,
+            },
+        }),
         copy({
             targets: [
                 {
@@ -29,15 +50,6 @@ export default {
                     dest: `dist/${production ? "release" : "debug"}`,
                 },
             ],
-        }),
-        svelte({
-            include: "src/**/*.svelte",
-            preprocess: sveltePreprocess({
-                sourceMap: !production,
-            }),
-            compilerOptions: {
-                dev: !production,
-            },
         }),
         // Extract component CSS into a separate file for performance
         css({ output: "bundle.css" }),
