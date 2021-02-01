@@ -12,7 +12,7 @@ const production = process.env.PRODUCTION !== undefined;
 export default {
     input: "src/main.ts",
     output: {
-        sourcemap: true,
+        sourcemap: !production,
         format: "iife",
         name: "app",
         file: `dist/${production ? "release" : "debug"}/build/bundle.js`,
