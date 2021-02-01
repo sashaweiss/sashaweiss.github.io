@@ -1,9 +1,9 @@
 <script lang="ts">
-    export let name: string;
+    const foo = "asdf";
 </script>
 
 <main>
-    <h1>Hello {name}!</h1>
+    <h1>Hello world!</h1>
 </main>
 
 <style>

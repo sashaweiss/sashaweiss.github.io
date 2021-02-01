@@ -2,9 +2,12 @@
     "name": "svelte-app",
     "version": "1.0.0",
     "scripts": {
-        "debug": "rollup -c",
-        "release": "PRODUCTION=true rollup -c",
-        "validate": "svelte-check"
+        "serve:debug": "sirv dist/debug --port 8888",
+        "serve:release": "sirv dist/release",
+        "build:debug": "rollup -c",
+        "build:release": "PRODUCTION=true rollup -c",
+        "watch:debug": "rollup -c -w",
+        "watch:release": "PRODUCTION=true rollup -c -w"
     },
     "devDependencies": {
         "@rollup/plugin-commonjs": "^17.0.0",
@@ -16,6 +19,7 @@
         "rollup-plugin-css-only": "^3.1.0",
         "rollup-plugin-svelte": "^7.0.0",
         "rollup-plugin-terser": "^7.0.0",
+        "sirv-cli": "^1.0.11",
         "svelte": "^3.0.0",
         "svelte-check": "^1.0.0",
         "svelte-preprocess": "^4.0.0",
