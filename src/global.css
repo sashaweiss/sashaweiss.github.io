@@ -1,3 +1,11 @@
 body {
+    font-family: "Segoe UI", Menlo, sans-serif;
     margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+main {
+    height: 100%;
+    width: 100%;
 }
