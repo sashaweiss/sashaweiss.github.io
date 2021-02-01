@@ -24,6 +24,10 @@ export default {
                     src: "src/index.html",
                     dest: `dist/${production ? "release" : "debug"}`,
                 },
+                {
+                    src: "src/global.css",
+                    dest: `dist/${production ? "release" : "debug"}`,
+                },
             ],
         }),
         svelte({
