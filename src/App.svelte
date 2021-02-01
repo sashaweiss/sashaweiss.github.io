@@ -1,9 +1,12 @@
 <script lang="ts">
-    const foo = "asdf";
+    function foo(asdf) {
+        console.log("hello world");
+    }
 </script>
 
 <main>
     <h1>Hello world!</h1>
+    <button on:click={foo}>click me</button>
 </main>
 
 <style>
