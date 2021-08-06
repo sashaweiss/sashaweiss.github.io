@@ -124,6 +124,10 @@ footer {
     padding-right: 24px;
 }
 
+#ack-who a {
+    color: inherit;
+}
+
 #ack-when {
     padding-left: 24px;
 }
