@@ -1,234 +1,129 @@
-/* Globals */
 html {
-	font-family: "Raleway", Monospace;
+    font-family: "Merriweather", sans-serif;
 }
 
 body {
-	height: 100vh;
+    margin: 0;
 }
 
-/* Background picture */
-.background {
-	height: inherit;
-	background-attachment: fixed;
-	background-size: cover;
+header {
+    background-color: lightblue;
+    padding: 0 36px;
 }
 
-.home-background:after {
-	content: "";
-	display: block;
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	z-index: -9;
-	background-image: linear-gradient(to bottom,
-	/* The last number here is the opacity of the overlay */
-	rgba(0, 0, 0, 0),
-	rgba(0, 0, 0, 0)
-	), url("@BAY_PHOTO");
-	background-position: center;
-	background-size: cover;
+#name,
+#headline,
+#email,
+#pronouns {
+    color: #222;
+    text-align: center;
+    margin: 0;
 }
 
-/* Header */
-.header {
-	display: flex;
-	justify-content: space-between;
-	text-transform: lowercase;
-	padding: 3rem 2rem;
+#name {
+    font-size: 2.5rem;
+    padding-bottom: 30px;
+    padding-top: 48px;
 }
 
-.header h1 {
-	padding-left: 3rem;
-	margin: 0;
+#headline {
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.5rem;
+    padding-bottom: 20px;
 }
 
-.header a {
-	transition: color 0.2s ease-in-out;
-	color: #444;
-	text-decoration: none;
+#pronouns {
+    text-transform: lowercase;
+    font-family: "Roboto Mono", monospace;
+    font-size: 1rem;
+    padding-bottom: 20px;
 }
 
-.header a:hover {
-	color: #111;
+#email {
+    text-transform: lowercase;
+    font-family: "Roboto Mono", monospace;
+    font-size: 1rem;
+    padding-bottom: 30px;
 }
 
-.header li a {
-	font-weight: bold;
-	font-size: 1.5rem;
-	padding: 1rem;
+#links {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
-.header ul {
-	display: flex;
-	justify-content: center;
-	line-height: 1.5;
-	flex-wrap: wrap;
-	margin: 0;
-	padding: 0;
-	padding-right: 3rem;
-	list-style-type: none;
+#links {
+    padding-bottom: 36px;
 }
 
-@media (max-width: 775px) {
-	.header {
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.header ul {
-		padding: 0.5rem;
-	}
-
-	.header h1 {
-		padding: 0.5rem;
-	}
+#links li {
+    padding: 0 1.5rem;
 }
 
-/* Covers */
-.cover {
-	height: 100vh;
+#links li a {
+    color: #555;
+    font-size: 2rem;
+    text-decoration: none;
 }
 
-/* Banner */
-.banner {
-	display: flex;
-	justify-content: space-between;
-	background-color: white;
-	opacity: 0.9;
-	padding: 3rem 4rem;
+#links li a :hover {
+    color: orange;
+    transition: color 0.15s ease-out;
 }
 
-.banner h1, .banner h2 {
-	text-transform: lowercase;
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 84px;
 }
 
-/* Intro banner */
-.flex-eq-width {
-	flex: 1 1 0;
+@media (max-width: 600px) {
+    main {
+        padding: 0 48px;
+    }
 }
 
-.intro-banner-left {
-	text-transform: lowercase;
+section,
+footer {
+    width: 100%;
+    max-width: 800px;
 }
 
-@media (max-width: 670px) {
-	.intro-banner {
-		flex-direction: column;
-	}
-
-	.flex-eq-width {
-		flex: 0 1 auto;
-	}
+section p {
+    line-height: 1.75;
+    margin: 0;
+    padding-top: 24px;
 }
 
-.intro-banner h1 {
-	margin: 0;
-	padding: 1rem;
-	padding-bottom: 0rem;
+section a {
+    color: inherit;
+    font-weight: 700;
 }
 
-.intro-banner p {
-	line-height: 1.75;
-	margin: 0;
-	padding: 1rem;
+footer {
+    padding: 4rem 0;
 }
 
-.intro-banner-left {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
+#acknowledgements {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
-.intro-banner-left p {
-	font-size: 1.25em;
+#acknowledgements li {
+    color: #666;
+    text-align: center;
 }
 
-.intro-banner-right {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
+#ack-who {
+    padding-right: 24px;
 }
 
-/* About banner */
-.about-banner {
-	flex-direction: column;
+#ack-when {
+    padding-left: 24px;
 }
-
-.about-banner h1 {
-	margin: 0;
-	padding-bottom: 1.5rem;
-}
-
-.about-banner h2 {
-	margin: 0;
-  padding-top: 2rem;
-	padding-bottom: 0.5rem;
-}
-
-.about-banner p {
-	text-transform: none;
-	line-height: 1.75;
-}
-
-.about-banner p a {
-	color: inherit;
-	font-weight: bold;
-}
-
-/* Footer */
-.footer {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	padding: 4rem 0;
-}
-
-.footer ul {
-	padding: 1.5rem 0;
-}
-
-.icons {
-	display: flex;
-	justify-content: center;
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-}
-
-.icons li {
-	padding: 0 2rem;
-}
-
-.icons li :hover {
-	color: orange;
-	transition: color 0.25s ease-in-out;
-}
-
-.icons li a {
-	font-size: 3em;
-	text-decoration: none;
-	color: #666;
-}
-
-.acknowledgements {
-	display: flex;
-	justify-content: center;
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-}
-
-.acknowledgements li {
-	padding: 0 2rem;
-	color: #666;
-	text-align: center;
-}
-
-.acknowledgements li a {
-	color: inherit;
-	text-decoration: none;
-}
-
