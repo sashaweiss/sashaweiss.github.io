@@ -79,6 +79,7 @@ main {
 }
 
 section {
+    width: 100%;
     max-width: 800px;
 }
 
@@ -91,17 +92,6 @@ section {
     flex-direction: column;
 }
 
-.about-banner h1 {
-    margin: 0;
-    padding-bottom: 1.5rem;
-}
-
-.about-banner h2 {
-    margin: 0;
-    padding-top: 2rem;
-    padding-bottom: 0.5rem;
-}
-
 .about-banner p {
     text-transform: none;
     line-height: 1.75;
@@ -112,55 +102,27 @@ section {
     font-weight: bold;
 }
 
-.footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+#footer {
     padding: 4rem 0;
 }
 
-.footer ul {
-    padding: 1.5rem 0;
-}
-
-.icons {
+#acknowledgements {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
 
-.icons li {
-    padding: 0 2rem;
-}
-
-.icons li :hover {
-    color: orange;
-    transition: color 0.25s ease-in-out;
-}
-
-.icons li a {
-    font-size: 3em;
-    text-decoration: none;
-    color: #666;
-}
-
-.acknowledgements {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-
-.acknowledgements li {
-    padding: 0 2rem;
+#acknowledgements li {
     color: #666;
     text-align: center;
 }
 
-.acknowledgements li a {
-    color: inherit;
-    text-decoration: none;
+#ack-who {
+    padding-right: 24px;
+}
+
+#ack-when {
+    padding-left: 24px;
 }
