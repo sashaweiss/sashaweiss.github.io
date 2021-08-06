@@ -1,4 +1,3 @@
-/* Globals */
 html {
     font-family: "Raleway", Monospace;
 }
@@ -7,34 +6,10 @@ body {
     height: 100vh;
 }
 
-/* Background picture */
 .background {
-    height: inherit;
-    background-attachment: fixed;
-    background-size: cover;
+    background-color: lightblue;
 }
 
-.home-background:after {
-    content: "";
-    display: block;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -9;
-    background-image: linear-gradient(
-            to bottom,
-            /* The last number here is the opacity of the overlay */
-                rgba(0, 0, 0, 0),
-            rgba(0, 0, 0, 0)
-        ),
-        url("../images/hydrogen.png");
-    background-position: center;
-    background-size: cover;
-}
-
-/* Header */
 .header {
     display: flex;
     justify-content: space-between;
@@ -89,12 +64,6 @@ body {
     }
 }
 
-/* Covers */
-.cover {
-    height: 100vh;
-}
-
-/* Banner */
 .banner {
     display: flex;
     justify-content: space-between;
@@ -108,7 +77,6 @@ body {
     text-transform: lowercase;
 }
 
-/* Intro banner */
 .flex-eq-width {
     flex: 1 1 0;
 }
@@ -155,7 +123,6 @@ body {
     align-items: flex-start;
 }
 
-/* About banner */
 .about-banner {
     flex-direction: column;
 }
@@ -181,7 +148,6 @@ body {
     font-weight: bold;
 }
 
-/* Footer */
 .footer {
     display: flex;
     flex-direction: column;
