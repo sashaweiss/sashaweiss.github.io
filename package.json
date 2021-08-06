@@ -1,20 +1,7 @@
 {
   "devDependencies": {
-    "browser-sync": "^2.26.7",
-    "gulp": "^4.0.2",
-    "gulp-clean-css": "^3.9.4",
-    "gulp-compile-handlebars": "^0.6.1",
-    "gulp-htmlmin": "^3.0.0",
-    "gulp-rename": "^1.2.3",
-    "gulp-replace": "^0.6.1",
-    "gulp-uglify": "^3.0.0"
+    "prettier": "^2.3.2"
   },
-  "scripts": {
-    "build": "./node_modules/.bin/gulp build",
-    "watch": "./node_modules/.bin/gulp"
-  },
-  "dependencies": {
-    "jquery": "^3.4.1",
-    "normalize.css": "^7.0.0"
-  }
+  "scripts": {},
+  "dependencies": {}
 }
