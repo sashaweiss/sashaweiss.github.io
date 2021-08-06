@@ -6,7 +6,7 @@ body {
     margin: 0;
 }
 
-#header {
+header {
     background-color: lightblue;
     padding: 0 36px;
 }
@@ -78,7 +78,8 @@ main {
     }
 }
 
-section {
+section,
+footer {
     width: 100%;
     max-width: 800px;
 }
@@ -102,7 +103,7 @@ section {
     font-weight: bold;
 }
 
-#footer {
+footer {
     padding: 4rem 0;
 }
 
