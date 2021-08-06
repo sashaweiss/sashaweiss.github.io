@@ -1,79 +1,86 @@
 html {
-    font-family: "Raleway", Monospace;
+    font-family: "Merriweather", sans-serif;
 }
 
 body {
     margin: 0;
 }
 
-section {
-    margin: 0 6rem;
-}
-
-@media (max-width: 600px) {
-    section {
-        margin: 0;
-    }
-}
-
-.header {
+#header {
     background-color: lightblue;
-    text-transform: lowercase;
-    padding: 3rem 2rem;
+    padding: 0 36px;
 }
 
-.header h1 {
+#name,
+#headline,
+#pronouns {
     text-align: center;
-    font-size: 2rem;
-    padding: 2rem;
     margin: 0;
 }
 
-.header a {
-    transition: color 0.2s ease-in-out;
-    color: #444;
-    text-decoration: none;
+#name {
+    font-size: 2.5rem;
+    padding-bottom: 30px;
+    padding-top: 48px;
 }
 
-.header a:hover {
-    color: #111;
-}
-
-.header li a {
-    font-weight: bold;
+#headline {
+    font-family: "Roboto Mono", monospace;
     font-size: 1.5rem;
-    padding: 1rem;
+    padding-bottom: 20px;
 }
 
-.header ul {
+#pronouns {
+    text-transform: lowercase;
+    font-family: "Roboto Mono", monospace;
+    font-size: 1rem;
+    padding-bottom: 30px;
+}
+
+#links {
     display: flex;
     justify-content: center;
-    line-height: 1.5;
-    flex-wrap: wrap;
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
 
-@media (max-width: 775px) {
-    .header {
-        flex-direction: column;
-        align-items: center;
-    }
+#links {
+    padding-bottom: 36px;
+}
 
-    .header ul {
-        padding: 0.5rem;
-    }
+#links li {
+    padding: 0 1.5rem;
+}
 
-    .header h1 {
-        padding: 0.5rem;
+#links li :hover {
+    color: orange;
+    transition: color 0.25s ease-in-out;
+}
+
+#links li a {
+    font-size: 2rem;
+    text-decoration: none;
+    color: #666;
+}
+
+/**************************/
+
+section {
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+@media (max-width: 600px) {
+    section {
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
 .intro-banner p {
     line-height: 1.75;
     margin: 0;
-    padding: 1rem;
 }
 
 .about-banner {
