@@ -13,6 +13,7 @@ header {
 
 #name,
 #headline,
+#email,
 #pronouns {
     color: #222;
     text-align: center;
@@ -32,6 +33,13 @@ header {
 }
 
 #pronouns {
+    text-transform: lowercase;
+    font-family: "Roboto Mono", monospace;
+    font-size: 1rem;
+    padding-bottom: 20px;
+}
+
+#email {
     text-transform: lowercase;
     font-family: "Roboto Mono", monospace;
     font-size: 1rem;
