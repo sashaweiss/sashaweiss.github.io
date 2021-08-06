@@ -65,18 +65,21 @@ body {
     transition: color 0.15s ease-out;
 }
 
-/**************************/
-
-section {
-    padding-left: 80px;
-    padding-right: 80px;
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 120px;
 }
 
 @media (max-width: 600px) {
-    section {
-        padding-left: 0;
-        padding-right: 0;
+    main {
+        padding: 0 48px;
     }
+}
+
+section {
+    max-width: 800px;
 }
 
 .intro-banner p {
