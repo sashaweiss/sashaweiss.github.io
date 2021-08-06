@@ -84,23 +84,15 @@ footer {
     max-width: 800px;
 }
 
-.intro-banner p {
-    line-height: 1.75;
+section p {
+    line-height: 1.5;
     margin: 0;
+    padding-top: 24px;
 }
 
-.about-banner {
-    flex-direction: column;
-}
-
-.about-banner p {
-    text-transform: none;
-    line-height: 1.75;
-}
-
-.about-banner p a {
+section a {
     color: inherit;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 footer {
